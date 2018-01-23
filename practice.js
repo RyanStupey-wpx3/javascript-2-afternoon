@@ -12,8 +12,13 @@
   Create an object called me. 
   Give it a key of name with the value being your name, and another key of age with the value being your age. 
   Then alert your name using dot notation.
-*/
 
+
+*/
+var me = {
+  name: 'me',
+  age: 22
+}
 //Code here
 
 
@@ -27,6 +32,15 @@
 
 //Code here
 
+var favoriteThings = {
+  band: "bastille",
+  food: "spaghetti",
+  person: "DAD",
+  book: "island of dreams",
+  movie: "Taken",
+  holiday: "christmas"
+}
+
 
 
 /*
@@ -35,13 +49,17 @@
 
 //Code here
 
-
+ favoriteThings.car = 'corvette';
+ favoriteThings.brand = "Hanes";
 
 /*
   Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 */
 
 //Code here
+
+favoriteThings['food'] = "Chicken Nuggets";
+favoriteThings['book'] = "Harry Potter";
 
 
 
@@ -57,7 +75,9 @@
 
 //Code here
 
-
+let backPack = {};
+let item = 'firstPocket';
+backPack[item] = 'chapstick'
 
 /*
   After you do the above, alert your entire backPack object.
@@ -97,6 +117,8 @@ var user2 = {
 */
 
 //Code Here
+user2['name'] = "Tyler S. McGinnis";
+user2['email'] = "tyler.mcginnis@devmounta.in";
 
 
 
@@ -109,7 +131,7 @@ var user2 = {
 */
 
 //Code Here
-
+let methodCollection = {};
 
 
 /*
@@ -119,7 +141,11 @@ var user2 = {
 
 //Code Here
 
+methodCollection['alertHello'] = function(){alert('hello')}
+methodCollection['logHello'] = function(){console.log('hello')}
 
+methodCollection.logHello()
+// methodCollection.alertHello()
 
 /*
   Now call your alertHello and logHello methods.
@@ -138,7 +164,16 @@ var user2 = {
 
 //Code Here
 
+function makePerson(name, birthday, ssn){
+          this.name = name;
+         this.birthday = birthday;
+          this.ssn = ssn;
+  return{name, birthday, ssn}
+}
 
+let person = new makePerson('john', '1/2/12', '103-33-5789')
+
+console.log(person)
 
 ////////// PROBLEM 7 //////////
 
@@ -149,4 +184,11 @@ var user2 = {
 
 //Code Here
 
+function makeCard(cardNumber, expirationDate, securityCode) {
+  this.cardNumber = cardNumber;
+  this.expirationDate = expirationDate;
+  this.securityCode = securityCode;
+  return {cardNumber, expirationDate, securityCode}
+}
 
+let master = new makeCard('111111111111', '2019', 'dr7')
